@@ -1,0 +1,69 @@
+* {
+  box-sizing: border-box;
+}
+.signin {
+  width: 100%;
+  height: 100%;
+}
+.signin-container {
+  border: 1px solid black;
+  height: 350px;
+  margin: 50px auto;
+  /* margin: 50px; */
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+.signin-container .title {
+  font-size: 1.2em;
+  font-weight: bolder;
+  margin-bottom: 20px;
+}
+.signin-container .email-container {
+  display: flex;
+  flex-direction: column;
+}
+.signin-container .email-container label {
+  margin-bottom: 5px;
+}
+.signin-container .email-container input {
+  padding: 10px 5px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.signin-container .password-container {
+  display: flex;
+  flex-direction: column;
+}
+.signin-container .password-container label {
+  margin-bottom: 5px;
+}
+.signin-container .password-container input {
+  padding: 10px 5px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.signin-container .signin-btn {
+  padding: 12px 0;
+  font-size: 1em;
+  background-color: #f0c040;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+.signin-container .new-customer Link {
+  margin-left: 2px;
+  padding: 5px 8px;
+  text-decoration: none;
+}
+.signin-container .new-customer Link:hover {
+  background-color: #ccc;
+  padding: 5px 8px;
+  border-radius: 12px;
+}
+

@@ -1,0 +1,36 @@
+.cartpage-item {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px 50px;
+  margin: 30px auto;
+  width: 80%;
+  border-radius: 12px;
+  display: flex;
+  line-height: 1em;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.item-img {
+  border: 1px solid gray;
+  padding: 2px;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+}
+
+.item-quantity .quantity-btn{
+  padding: 0 3px;
+  font-weight: bolder;
+  font-size: 1em;
+}
+
+.item-count{
+  margin: 0 7px;
+}
+
+.delete-btn button{
+  font-size: 0.8em;
+  padding: 3px 5px;
+}
