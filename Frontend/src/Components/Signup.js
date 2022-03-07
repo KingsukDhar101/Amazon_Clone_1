@@ -55,7 +55,7 @@ export default function Singup() {
       setPasswordcheck(false);
     }
     // sending email & password to backend - for authentication (matching email & password)
-    let responseData = await axios.post("http://localhost:5001/api/signup", {
+    let responseData = await axios.post("/api/signup", {
       username: email,
       password,
     });

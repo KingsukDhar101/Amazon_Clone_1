@@ -16,18 +16,18 @@ export default function ContextWrapper({ children }) {
   const [total, setTotal] = useState(0);
 
   let totalPrice = 0;
-  useEffect(()=>{
-    cart.map(item => {
+  useEffect(() => {
+    cart.map((item) => {
       totalPrice += item.countInCart * item.price;
       setTotal(totalPrice);
     });
 
-    if(cart.length == 0){
+    if (cart.length == 0) {
       setTotal(0);
     }
-  },[cart]);
+  }, [cart]);
 
-  console.log("Total price : ",total);
+  console.log("Total price : ", total);
 
   function addToCart(
     id,
@@ -39,11 +39,14 @@ export default function ContextWrapper({ children }) {
     countInStock,
     countInCart
   ) {
+    console.log("Cart-@first: ", cart);
     if (countInStock === 0) return;
     let search = cart.find((item) => item.id === id);
     if (search && search.countInStock > search.countInCart) {
       search.countInCart += 1;
+      console.log("Search-after-filter: ", search);
       setCart([...cart]);
+      console.log("Cart: ", cart);
     } else {
       cart.push({
         id,
@@ -57,7 +60,7 @@ export default function ContextWrapper({ children }) {
       });
       setCart([...cart]);
     }
-    console.log(cart);
+    console.log("cart-@last: ", cart);
   }
 
   function addToCartByValue(

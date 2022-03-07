@@ -7,6 +7,7 @@ import FilterContext from "../Context/FilterContext";
 
 export default function Content() {
   const { productArr, setProductArr } = useContext(UserContext);
+  let userData;
   const {
     filter: { search },
   } = useContext(FilterContext);
@@ -17,8 +18,11 @@ export default function Content() {
   useEffect(async () => {
     console.log("render one time");
     let responseData = await axios.get("/data");
-    setProductArr(responseData.data.data.products);
-    console.log(responseData.data.data.products);
+    setProductArr(responseData.data.Products);
+    console.log(responseData.data.Products);
+
+    userData = JSON.parse(localStorage.getItem("user"));
+    // console.log("Userdata: ",userData.Success);
   }, []);
 
   let newArr = productArr.filter((product) =>

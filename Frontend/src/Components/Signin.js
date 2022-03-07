@@ -13,9 +13,9 @@ export default function Signin() {
   const { setUser } = useContext(UserContext);
   let navigate = useNavigate();
   // v1
-  useEffect(() => {
-    console.log("All time render");
-  });
+  // useEffect(() => {
+  //   console.log("All time render");
+  // });
 
   // v2
   useEffect(() => {
@@ -57,13 +57,13 @@ export default function Signin() {
       setPasswordcheck(false);
     }
     // sending email & password to backend - for authentication (matching email & password)
-    let responseData = await axios.post("http://localhost:5001/api/login", {
+    let responseData = await axios.post("/api/login", {
       username: email,
       password,
     });
-    if (responseData.data.Sucess === 1) {
+    if (responseData.data.Success === 1) {
       setUser(responseData.data);
-      console.log("abcd");
+      console.log("Navigating to Homepage");
       localStorage.setItem("user", JSON.stringify(responseData.data));
       navigate("/");
     } else {
